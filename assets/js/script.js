@@ -52,10 +52,27 @@ function searchSpotify(query) {
             data.tracks.items.forEach(function(item) {
                 var li = document.createElement('li');
                 li.textContent = item.name + ' - ' + item.artists[0].name;
+
+                var playButton = document.createElement('button');
+                playButton.textContent = 'Play';
+                
+                // Add click event listener to play the track
+                playButton.addEventListener('click', function() {
+                    playTrack(item.preview_url);
+                });
+                
+                li.appendChild(playButton);
                 musicList.appendChild(li);
             });
         })
         .catch(error => console.error('Error:', error));
     })
     .catch(error => console.error('Error:', error));
+}
+
+// Function to play the selected track
+function playTrack(previewUrl) {
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = previewUrl;
+    audioPlayer.play();
 }
