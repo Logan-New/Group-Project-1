@@ -50,8 +50,21 @@ function searchSpotify(query) {
 
             // Append new search results
             data.tracks.items.forEach(function(item) {
+                var trackName = item.name;
+                var artistName = item.artists[0].name;
+                var spotifyUri = item.uri;
+
+                // Create anchor element
+                var link = document.createElement('a');
+                link.href = spotifyUri;
+                link.target = '_blank';
+                link.textContent = trackName + ' - ' + artistName;
+
+                // Create list item
                 var li = document.createElement('li');
-                li.textContent = item.name + ' - ' + item.artists[0].name;
+                li.appendChild(link);
+                
+                // Append list item to the music list
                 musicList.appendChild(li);
             });
         })
