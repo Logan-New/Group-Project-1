@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RiffRealm - Music Library</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>My Cool Music Website</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <header>
-        <h1 class="header">RiffRealm</h1>
-    </header>
-    <main>
-        <aside class="side-bar">
-            <h2>Categories</h2>
+        <h1>Welcome to My Cool Music Website</h1>
+        <nav>
             <ul>
+                <li id="Home">Home</li>
+                <li id="Artists">Artists</li>
+                <li id="Albums">Albums</li>
+            </ul>
+
+            <form action="">
+                <input placeholder="song" type="text">
+                <button type="submit" id="searchButton">Search</button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <section>
                 <a href="categories.html">Categories</a>
-                <li><a href="my-playlist.html">My Playlist</a></li>
-                <li><a href="concerts.html">Concerts</a></li>
-                <li><a href="whats-hot.html">What's Hot (Trending)</a></li>
-            </ul>
-        </aside>
-        <section class="content">
-            <h2>User's Music Library</h2>
-            <input type="text" id="searchInput" placeholder="Search...">
-            <ul id="musicList">
-                <!-- Music items will be added here dynamically -->
-            </ul>
-        </section>
-        <audio id="audioPlayer" controls></audio>
-        </main>
-    <footer class="fStyle">
-        At RiffRealm our biggest desire is to satisfy your new music needs.
-        we strive to bring you new music and updates on your favorite artist.
-        Make sure to link your Spotify account to allow for maximum recommendations 
-        to your favorite artist and artists like them.
+                <br>
+                <a href="playlist.html">Playlists</a>
+                <br>
+                <a href="concerts.html">Concerts</a>
+                <br>
+                <a href="trending.html">Trending</a>
+                <br>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Cool Music Website. All rights reserved.</p>
     </footer>
-    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
