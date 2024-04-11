@@ -50,25 +50,29 @@ function searchSpotify(query) {
 
             // Append new search results
             data.tracks.items.forEach(function(item) {
-                var trackName = item.name;
-                var artistName = item.artists[0].name;
-                var spotifyUri = item.uri;
-
-                // Create anchor element
-                var link = document.createElement('a');
-                link.href = spotifyUri;
-                link.target = '_blank';
-                link.textContent = trackName + ' - ' + artistName;
-
-                // Create list item
                 var li = document.createElement('li');
-                li.appendChild(link);
+                li.textContent = item.name + ' - ' + item.artists[0].name;
+
+                var playButton = document.createElement('button');
+                playButton.textContent = 'Play';
                 
-                // Append list item to the music list
+                // Add click event listener to play the track
+                playButton.addEventListener('click', function() {
+                    playTrack(item.preview_url);
+                });
+                
+                li.appendChild(playButton);
                 musicList.appendChild(li);
             });
         })
         .catch(error => console.error('Error:', error));
     })
     .catch(error => console.error('Error:', error));
+}
+
+// Function to play the selected track
+function playTrack(previewUrl) {
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = previewUrl;
+    audioPlayer.play();
 }
