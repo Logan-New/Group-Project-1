@@ -1,0 +1,4 @@
+##Cool Music Website
+
+#Mvp
+This website was built to search and find artist and their songs. It will also notify user of new music being released as well as concerts near them. It allows for an ever changing industry to tracked by busy people on a tight schedule.It uses spotify api to allow music to be searched by the user and results be listed on the front page when commanded.
