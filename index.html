@@ -5,27 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cool Music Website</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <!-- <link rel="stylesheet" href="assets/style.css"> -->
+    <link rel="stylesheet" href="assets/test-style.css">
 </head>
 
 <body>
     <header>
         <h1>Welcome to My Cool Music Website</h1>
+        <!-- <nav>
+            <ul>
+                <li id="Home">Home</li>
+                <li id="Artists">Artists</li>
+                <li id="Albums">Albums</li>
+            </ul>
+        </nav> -->
     </header>
 
-    <div id="form-container">
-        <form action="">
-            <input type="text" id="searchInput" placeholder="Enter song name...">
-            <button type="submit" id="searchButton">Search</button>
-        </form>
-    </div>
-
-    <div id="playback-widget">
-
-    </div>
-
     <main>
-        <div class="sidebar">
+        <!-- <div class="sidebar">
             <section>
                 <a href="categories.html">Categories</a>
                 <br>
@@ -36,19 +33,33 @@
                 <a href="trending.html">Trending</a>
                 <br>
             </section>
-            <div>
+            <div> -->
 
-                <ul id="musicList"></ul>
+        <div id="top-row">
+            <div id="search-form">
+                <input type="text" id="searchInput" placeholder="Enter song name...">
+                <button type="submit" id="searchButton">Search</button>
+            </div>
+            
+            <div id="audio-player-div">
                 <audio id="audioPlayer" controls></audio>
             </div>
         </div>
+      
+        <div id="middle-row">
+            <div id="artist-song-info-container">
+                <ul id="musicList"></ul>
+            </div>
+            <div id="lyrics-container"></div>
+        </div>     
+     
     </main>
 
     <footer>
         <p>&copy; 2024 My Cool Music Website. All rights reserved.</p>
     </footer>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
