@@ -81,7 +81,7 @@ function searchSpotify(query) {
 function getSongLyrics() {
 
     let testArtist = 'Gojira';
-    let testSong = 'Magma'
+    let testSong = 'the heaviest matter of the universe'
     let lyricsApiUrl = `https://api.lyrics.ovh/v1/${testArtist}/${testSong}`;
 
     fetch(lyricsApiUrl, {
