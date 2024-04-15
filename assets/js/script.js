@@ -10,7 +10,7 @@ document.getElementById('searchInput').addEventListener('keypress', handleKeyPre
 document.getElementById('searchButton').addEventListener('click', function () {
     let searchTerm = document.getElementById('searchInput').value;
     searchSpotify(searchTerm);
-    getSongLyrics();
+    // getSongLyrics();
 });
 
 // -------------------------------------------------------------------------------------------------
@@ -60,15 +60,26 @@ function searchSpotify(query) {
 
                         let playButton = document.createElement('button');
                         playButton.textContent = 'Play';
-                        playButton.setAttribute("style", "margin: 0 10px;")
+                        playButton.setAttribute("style", "margin: 0 10px;");
 
                         playButton.addEventListener('click', function () {
                             playTrack(item.preview_url);
                         });
 
+                        let lyricsButton = document.createElement('button');
+                        lyricsButton.textContent = 'Lyrics';
+                        lyricsButton.setAttribute("style", "margin: 0 10px;");
+
+                        lyricsButton.addEventListener('click', function() {
+                            getSongLyrics(item.artists[0].name, item.name);
+                        })
+
                         // li.appendChild(playButton);
+                        li.insertBefore(lyricsButton, li.firstChild)
                         li.insertBefore(playButton, li.firstChild)
                         musicList.appendChild(li);
+
+                    
                     });
                 })
                 .catch(error => console.error('Error:', error));
@@ -78,11 +89,11 @@ function searchSpotify(query) {
 
 // -----------------------------------------------------------------
 
-function getSongLyrics() {
+function getSongLyrics(artist, song) {
 
-    let testArtist = 'Gojira';
-    let testSong = 'the heaviest matter of the universe'
-    let lyricsApiUrl = `https://api.lyrics.ovh/v1/${testArtist}/${testSong}`;
+    // let testArtist = 'Gojira';
+    // let testSong = 'the heaviest matter of the universe'
+    let lyricsApiUrl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
 
     fetch(lyricsApiUrl, {
         method: 'GET'
@@ -90,8 +101,12 @@ function getSongLyrics() {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-    })
+        let lyricsContainerEl = document.getElementById('lyrics-container');
 
+        let lyricsTextEl = document.createElement('p');
+        lyricsTextEl.textContent = data.lyrics;
+        lyricsContainerEl.appendChild(lyricsTextEl);
+    })
 }
 
 // -----------------------------------------------------------------
