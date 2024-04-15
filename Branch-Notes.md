@@ -17,4 +17,4 @@
 
 1. In the search url, a limit has been set for the number of returned items in the track list
 2. in the track listings, play buttons now come before text. The now have padding to space them from the text
-3. 
+3. added lyircs-button functionality
