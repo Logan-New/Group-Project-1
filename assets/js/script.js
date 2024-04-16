@@ -92,7 +92,8 @@ function getSongLyrics(artist, song) {
     fetch(lyricsApiUrl)
     .then(response => response.json())
     .then(data => {
-        var lyricsText = document.createElement('p');
+        console.log(data);
+        var lyricsText = document.createElement('pre');
         if (data.lyrics) {
             lyricsText.textContent = data.lyrics;
         } else {
