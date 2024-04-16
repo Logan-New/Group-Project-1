@@ -1,3 +1,58 @@
+// Function to populate the search history dropdown without duplicates
+function populateSearchHistoryDropdown() {
+    var searches = JSON.parse(localStorage.getItem('searches')) || [];
+    var uniqueSearches = [...new Set(searches)]; // Remove duplicates
+    var dropdown = document.getElementById('searchHistoryDropdown');
+    dropdown.innerHTML = ''; // Clear previous dropdown options
+    uniqueSearches.forEach(function(search) {
+        var option = document.createElement('option');
+        option.value = search;
+        option.textContent = search;
+        dropdown.appendChild(option);
+    });
+}
+
+// Function to handle search and store search history
+function handleSearch(query) {
+    // Store search term in local storage
+    var searches = JSON.parse(localStorage.getItem('searches')) || [];
+    searches.push(query);
+    localStorage.setItem('searches', JSON.stringify(searches));
+    
+    // Perform Spotify search
+    searchSpotify(query);
+    
+    // Update dropdown menu
+    populateSearchHistoryDropdown();
+}
+
+// Event listener for search button click and Enter key press in search input
+document.getElementById('searchButton').addEventListener('click', function() {
+    var searchTerm = document.getElementById('searchInput').value;
+    handleSearch(searchTerm);
+});
+
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        var searchTerm = document.getElementById('searchInput').value;
+        handleSearch(searchTerm);
+    }
+});
+
+// Event listener for dropdown selection
+document.getElementById('searchHistoryDropdown').addEventListener('change', function() {
+    var selectedValue = this.value;
+    document.getElementById('searchInput').value = selectedValue;
+    // Automatically trigger search when a dropdown option is selected
+    searchSpotify(selectedValue);
+});
+
+// Function to be called on page load to populate the dropdown initially
+window.onload = function() {
+    populateSearchHistoryDropdown();
+};
+
+// Function to handle Enter key press in search input for immediate search
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
         var searchTerm = document.getElementById('searchInput').value;
@@ -7,11 +62,7 @@ function handleKeyPress(event) {
 
 document.getElementById('searchInput').addEventListener('keypress', handleKeyPress);
 
-document.getElementById('searchButton').addEventListener('click', function() {
-    var searchTerm = document.getElementById('searchInput').value;
-    searchSpotify(searchTerm);
-});
-
+// Function for Spotify search
 function searchSpotify(query) {
     var clientSecret = 'e1c9bffa0ed44bd4a69cb5e45b2e6ab6';
     var clientId = 'd980cc9583b2403baaf826a983a1e539';
@@ -68,6 +119,7 @@ function searchSpotify(query) {
     .catch(error => console.error('Error:', error));
 }
 
+// Function for creating Spotify player
 function createSpotifyPlayer(trackUri) {
     var playerContainer = document.getElementById('spotifyPlayer');
     playerContainer.innerHTML = ''; // Clear previous player
@@ -83,6 +135,7 @@ function createSpotifyPlayer(trackUri) {
     playerContainer.appendChild(iframe);
 }
 
+// Function for getting song lyrics
 function getSongLyrics(artist, song) {
     var lyricsContainer = document.getElementById('lyrics-container');
     lyricsContainer.innerHTML = ''; // Clear previous lyrics
