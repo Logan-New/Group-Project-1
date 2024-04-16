@@ -1,3 +1,17 @@
+// Function to populate the search history dropdown without duplicates
+function populateSearchHistoryDropdown() {
+    var searches = JSON.parse(localStorage.getItem('searches')) || [];
+    var uniqueSearches = [...new Set(searches)]; // Remove duplicates
+    var dropdown = document.getElementById('searchHistoryDropdown');
+    dropdown.innerHTML = ''; // Clear previous dropdown options
+    uniqueSearches.forEach(function(search) {
+        var option = document.createElement('option');
+        option.value = search;
+        option.textContent = search;
+        dropdown.appendChild(option);
+    });
+}
+
 // Function to handle search and store search history
 function handleSearch(query) {
     // Store search term in local storage
@@ -10,19 +24,6 @@ function handleSearch(query) {
     
     // Update dropdown menu
     populateSearchHistoryDropdown();
-}
-
-// Function to populate the search history dropdown
-function populateSearchHistoryDropdown() {
-    var searches = JSON.parse(localStorage.getItem('searches')) || [];
-    var dropdown = document.getElementById('searchHistoryDropdown');
-    dropdown.innerHTML = ''; // Clear previous dropdown options
-    searches.forEach(function(search) {
-        var option = document.createElement('option');
-        option.value = search;
-        option.textContent = search;
-        dropdown.appendChild(option);
-    });
 }
 
 // Event listener for search button click and Enter key press in search input
