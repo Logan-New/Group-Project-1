@@ -17,11 +17,6 @@
                 <li id="Artists">Artists</li>
                 <li id="Albums">Albums</li>
             </ul>
-
-            <form action="">
-                <input placeholder="song" type="text">
-                <button type="submit" id="searchButton">Search</button>
-            </form>
         </nav>
     </header>
 
@@ -37,6 +32,14 @@
                 <a href="trending.html">Trending</a>
                 <br>
             </section>
+            <body>
+                <input type="text" id="searchInput" placeholder="Enter song name...">
+                <button type="submit" id="searchButton">Search</button>
+                <ul id="musicList"></ul>
+                <audio id="audioPlayer" controls></audio>
+            
+                <script src="script.js"></script>
+            </body>
             <section class="content">
                 <input type="text" id="placeholder= Search..">
                 <ul id="musicList">
