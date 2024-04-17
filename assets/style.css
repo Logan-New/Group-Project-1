@@ -6,7 +6,6 @@
 
 /* Set body styles */
 body {
-    background-color: azure;
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
@@ -16,8 +15,6 @@ body {
 header {
     width: 100%;
     height: 100px;
-    color: yellow;
-    background-color: green; /* You can keep the header background green */
     font-family: 'Georgia';
     text-align: center;
     padding: 5px;
@@ -83,7 +80,6 @@ footer {
 
 /* Set body styles */
 body {
-    background-color: azure;
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
@@ -93,8 +89,6 @@ body {
 header {
     width: 100%;
     height: 100px;
-    color: yellow;
-    background-color: green; /* You can keep the header background green */
     font-family: 'Georgia';
     text-align: center;
     padding: 5px;
@@ -154,7 +148,7 @@ footer {
 
 /* Green button styles */
 .green-button {
-    background-color: green;
+    background-color: lightblue;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -164,12 +158,12 @@ footer {
 
 /* Active style for shuffle icon */
 #shuffleButton.active i {
-    color: green; /* Change icon color to green to indicate active state */
+    color: lightblue; /* Change icon color to green to indicate active state */
 }
 
 /* Active style for repeat icon */
 #repeatButton.active i {
-    color: green; /* Change icon color to green to indicate active state */
+    color: lightblue; /* Change icon color to green to indicate active state */
 }
 
 /* Inactive style for shuffle icon */
