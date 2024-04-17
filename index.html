@@ -5,43 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cool Music Website</title>
-    <!-- <link rel="stylesheet" href="assets/style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
     <header>
         <h1>Welcome to My Cool Music Website</h1>
-        <!-- <nav>
-            <ul>
-                <li id="Home">Home</li>
-                <li id="Artists">Artists</li>
-                <li id="Albums">Albums</li>
-            </ul>
-        </nav> -->
     </header>
 
     <main>
-        <!-- <div class="sidebar">
-            <section>
-                <a href="categories.html">Categories</a>
-                <br>
-                <a href="playlist.html">Playlists</a>
-                <br>
-                <a href="concerts.html">Concerts</a>
-                <br>
-                <a href="trending.html">Trending</a>
-                <br>
-            </section>
-            <div> -->
-
         <div id="top-row">
-                 <div id="search-form">
-                    <input type="text" id="searchInput" placeholder="Enter song name...">
-                    <button type="submit" id="searchButton">Search</button>
-                    <select id="searchHistoryDropdown"></select>
-                </div>
+            <div id="search-form">
+                <input type="text" id="searchInput" placeholder="Enter song name...">
+                <button type="submit" id="searchButton">Search</button>
+                <select id="searchHistoryDropdown">
+                    <option value="Select-Saved">Select Saved</option>
+                </select>
+            </div>
 
+            <!-- Buttons for shuffle and repeat -->
+            <div id="shuffleButton" class="active">
+                <button id="shuffleIcon"><i class="fas fa-random"></i></button>
+            </div>
+            <div id="repeatButton" class="active">
+                <button id="repeatIcon"><i class="fas fa-redo"></i></button>
+            </div>
             
             <div id="spotifyPlayer"></div>
         </div>
