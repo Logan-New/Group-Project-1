@@ -1,49 +1,51 @@
+/* Define CSS variables */
 :root {
     --border: 2px solid black;
     --border-radius: 5px;
 }
 
-body{
+/* Set body styles */
+body {
     background-color: azure;
     padding: 0;
     margin: 0;
     font-size: 1.2rem;
 }
 
+/* Header styles */
 header {
     width: 100%;
     height: 100px;
     color: yellow;
-    background-color: green;
+    background-color: green; /* You can keep the header background green */
     font-family: 'Georgia';
-    /* font-size: 60px; */
     text-align: center;
     padding: 5px;
     margin-bottom: 20px;
 }
 
+/* Main content styles */
 main {
     margin: 20px;
 }
 
+/* Top row styles */
 #top-row {
     display: flex;
-
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
 }
 
-#top-row > *{
-    /* margin: 5px 20px; */
-}
-
+/* Search form styles */
 #search-form {
     margin: 5px;
     padding: 5px;
     border: var(--border);
     border-radius: var(--border-radius);
     width: 50%;
-    /* align-items: center; */
 }
 
+/* Audio player styles */
 #audio-player-div {
     margin: 5px;
     padding: 5px;
@@ -52,49 +54,156 @@ main {
     width: 50%;
 }
 
+/* Middle row styles */
 #middle-row {
     display: flex;
 }
 
-#artist-song-info-container {
-    margin: 5px;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: var(--border-radius);
-    width: 50%;
-    min-height: 300px;
-}
-
+/* Artist and song info container styles */
+#artist-song-info-container,
 #lyrics-container {
     margin: 5px;
     padding: 5px;
-    border: 2px solid black;
+    border: var(--border);
     border-radius: var(--border-radius);
     width: 50%;
     min-height: 300px;
 }
 
+/* Footer styles */
 footer {
     text-align: center;
 }
-/* .side-bar {
-    width: 290px;
-    height: 210px;
-    background-color: gray;
-    font-family: 'Comic Sans MS';
-    text-align: center;
-    font-size: 20px;
-} */
 
-/* .content {
-
-} */
-
-p {
-    /* font-size: 20px; */
+/* Define CSS variables */
+:root {
+    --border: 2px solid black;
+    --border-radius: 5px;
 }
 
-/* .fStyle {
-    font-family: 'Comic Sans MS';
-    font-size: 20px;
-} */
+/* Set body styles */
+body {
+    background-color: azure;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    height: 100px;
+    color: yellow;
+    background-color: green; /* You can keep the header background green */
+    font-family: 'Georgia';
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* Main content styles */
+main {
+    margin: 20px;
+}
+
+/* Top row styles */
+#top-row {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+/* Search form styles */
+#search-form {
+    margin: 5px;
+    padding: 5px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    width: 50%;
+}
+
+/* Audio player styles */
+#audio-player-div {
+    margin: 5px;
+    padding: 5px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    width: 50%;
+}
+
+/* Middle row styles */
+#middle-row {
+    display: flex;
+}
+
+/* Artist and song info container styles */
+#artist-song-info-container,
+#lyrics-container {
+    margin: 5px;
+    padding: 5px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    width: 50%;
+    min-height: 300px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+}
+
+/* Green button styles */
+.green-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Active style for shuffle icon */
+#shuffleButton.active i {
+    color: green; /* Change icon color to green to indicate active state */
+}
+
+/* Active style for repeat icon */
+#repeatButton.active i {
+    color: green; /* Change icon color to green to indicate active state */
+}
+
+/* Inactive style for shuffle icon */
+#shuffleButton:not(.active) i {
+    color: inherit; /* Reset icon color to default when not active */
+}
+
+/* Inactive style for repeat icon */
+#repeatButton:not(.active) i {
+    color: inherit; /* Reset icon color to default when not active */
+}
+
+/* Increase the font size of the icons within the buttons */
+#shuffleButton button i,
+#repeatButton button i {
+    font-size: 40px; /* Adjust the size as needed */
+}
+
+/* Position shuffle and repeat buttons side by side  */
+#shuffleButton,
+#repeatButton {
+    margin-right:20px;
+}
+
+/* Ensure last button doesn't have margin */
+#repeatButton {
+    margin-right: 0;
+}
+
+/* Hide button text */
+#shuffleButton button,
+#repeatButton button {
+    color: black;
+    background: none;
+    border: none;
+    padding: 0;
+}
