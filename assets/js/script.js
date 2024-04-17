@@ -177,15 +177,17 @@ document.getElementById('repeatButton').addEventListener('click', function() {
 });
 
 // Event listener for search button click and Enter key press in search input
-document.getElementById('searchButton').addEventListener('click', function() {
-    var searchTerm = document.getElementById('searchInput').value;
-    handleSearch(searchTerm);
-});
+function submitSearchInputVal() {
+        var searchTerm = document.getElementById('searchInput').value;
+        handleSearch(searchTerm);
+        document.getElementById('searchInput').value = "";
+}
+
+document.getElementById('searchButton').addEventListener('click', submitSearchInputVal);
 
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        var searchTerm = document.getElementById('searchInput').value;
-        handleSearch(searchTerm);
+        submitSearchInputVal();
     }
 });
 
@@ -288,3 +290,18 @@ function getSongLyrics(artist, song) {
     })
     .catch(error => console.error('Error:', error));
 }
+
+// ------------------ Open & Close Modal----------------------------------------------------
+document.getElementById('activate-modal-button').addEventListener('click', function() {
+    document.getElementById('search-modal').setAttribute('class', 'modal is-active');
+})
+
+function closeModal() {
+    document.getElementById('search-modal').removeAttribute('class');
+    console.log("close button pressed");
+    document.getElementById('search-modal').setAttribute('class', 'modal');
+}
+
+document.getElementById('close-modal-button').addEventListener('click', closeModal);
+
+document.getElementById('searchButton').addEventListener('click', closeModal);

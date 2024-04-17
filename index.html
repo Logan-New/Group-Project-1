@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cool Music Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -30,6 +31,26 @@
                         <option value="Select-Saved">Select Saved</option>
                     </select>
                 </div>
+        <div id="top-row">
+       
+             <!-- ------------ Modal Form ------------------------- -->
+             <div id="search-form">
+                <button id="activate-modal-button" class="button is-success">Open Search</button>
+                <div id="search-modal" class="modal ">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div class="box">
+                            <input type="text" id="searchInput" placeholder="Enter song name...">
+                            <button type="submit" id="searchButton">Search</button>
+                        </div>
+                    </div>
+                    <button id="close-modal-button" class="modal-close is-large"></button>
+                </div>
+    
+                <select id="searchHistoryDropdown">
+                    <option value="Select-Saved">Select Saved</option>
+                </select>
+            </div>
 
                 <!-- Buttons for shuffle and repeat -->
                 <div id="shuffleButton" class="active">
