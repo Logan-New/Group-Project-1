@@ -177,15 +177,17 @@ document.getElementById('repeatButton').addEventListener('click', function() {
 });
 
 // Event listener for search button click and Enter key press in search input
-document.getElementById('searchButton').addEventListener('click', function() {
-    var searchTerm = document.getElementById('searchInput').value;
-    handleSearch(searchTerm);
-});
+function submitSearchInputVal() {
+        var searchTerm = document.getElementById('searchInput').value;
+        handleSearch(searchTerm);
+        document.getElementById('searchInput').value = "";
+}
+
+document.getElementById('searchButton').addEventListener('click', submitSearchInputVal);
 
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        var searchTerm = document.getElementById('searchInput').value;
-        handleSearch(searchTerm);
+        submitSearchInputVal();
     }
 });
 
