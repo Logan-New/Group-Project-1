@@ -1,4 +1,4 @@
-##Cool Music Website
+## Cool Music Website
 #Welcome to the Cool Music Website! This project was developed to provide users with a convenient platform for discovering artists, their songs, and staying updated on new music releases and nearby concerts. Whether you're a music enthusiast with a busy schedule or simply looking for a hassle-free way to explore the music industry, our website aims to cater to your needs.
 #Mvp
 This website was built to search and find artist and their songs. It will also notify user of new music being released as well as concerts near them. 
@@ -19,10 +19,10 @@ Backend: Node.js, Express.js
 API: Spotify API for music search functionality
 API: Lyrics.ovh Api for lyric generator functionality
 
-##Contributing
+## Contributing
 We welcome contributions from the community to enhance the Cool Music Website! Whether it's fixing bugs, adding new features, or improving documentation, your contributions are highly appreciated. To contribute, 
 
-##Fork the repository.
+## Fork the repository.
 Create your feature branch: git checkout -b feature/new-feature
 Commit your changes: git commit -am 'Add some feature'
 Push to the branch: git push origin feature/new-feature
@@ -30,7 +30,7 @@ Submit a pull request.
 ##Feedback and Support
 We value your feedback! If you have any suggestions, encounter any issues, or need assistance, please don't hesitate to reach out to us. You can open an issue on our GitHub repository.
 
-##Thank you for using the Cool Music Website! Happy exploring 🎶🎧
+## Thank you for using the Cool Music Website! Happy exploring 🎶🎧
 
 
 
