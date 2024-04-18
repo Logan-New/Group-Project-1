@@ -7,7 +7,6 @@
     <title>My Cool Music Website</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -23,72 +22,61 @@
             <div class="column is-half" id="search-form">
                 <h3 class="subtitle is-4 has-text-white">Search for a Song or Artist!</h3>
                 <div class="content is-medium">
-                    <input style="margin-top: 10px;" type="text" class="input" id="searchInput"
-                        placeholder="Enter song name or artist...">
-                    <button style="margin-top: 10px;" class="button is-info is-active" type="submit"
-                        id="searchButton">Search</button>
-                    <select id="searchHistoryDropdown">
-                        <option value="Select-Saved">Select Saved</option>
-                    </select>
-                </div>
-        <div id="top-row">
-       
-             <!-- ------------ Modal Form ------------------------- -->
-             <div id="search-form">
-                <button id="activate-modal-button" class="button is-success">Open Search</button>
-                <div id="search-modal" class="modal ">
-                    <div class="modal-background"></div>
-                    <div class="modal-content">
-                        <div class="box">
-                            <input type="text" id="searchInput" placeholder="Enter song name...">
-                            <button type="submit" id="searchButton">Search</button>
+                    <button id="activate-modal-button" class="button is-success">Open Search</button>
+                    <div id="search-modal" class="modal ">
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                            <div class="box">
+                                <input style="margin-top: 10px;" type="text" class="input" id="searchInput"
+                                    placeholder="Enter song name or artist...">
+                                <button style="margin-top: 10px;" class="button is-info is-active" type="submit"
+                                    id="searchButton">Search</button>
+                                <select id="searchHistoryDropdown">
+                                    <option value="Select-Saved">Select Saved</option>
+                                </select>
+                                <button id="close-modal-button" class="modal-close is-large"></button>
+                            </div>
                         </div>
                     </div>
-                    <button id="close-modal-button" class="modal-close is-large"></button>
-                </div>
-    
-                <select id="searchHistoryDropdown">
-                    <option value="Select-Saved">Select Saved</option>
-                </select>
-            </div>
+                            <div id="top-row">
 
-                <!-- Buttons for shuffle and repeat -->
-                <div id="shuffleButton" class="active">
-                    <button id="shuffleIcon"><i class="fas fa-random"></i></button>
-                </div>
-                <div id="repeatButton" class="active">
-                    <button id="repeatIcon"><i class="fas fa-redo"></i></button>
-                </div>
-                <div id="spotifyPlayer"></div>
-            </div>
-        </div>
-            <br>
-        <div class="box">
-            <div class="columns" id="middle-row">
-                <div class="column">
-                    <article class="message">
-                        <div class="message-header">
-                            <p class="subtitle has-text-white">Song Results!</p>
+                                <!-- Buttons for shuffle and repeat -->
+                                <div id="shuffleButton" class="active">
+                                    <button id="shuffleIcon"><i class="fas fa-random"></i></button>
+                                </div>
+                                <div id="repeatButton" class="active">
+                                    <button id="repeatIcon"><i class="fas fa-redo"></i></button>
+                                </div>
+                                <div id="spotifyPlayer"></div>
+                            </div>
                         </div>
-                        <div class="message-body" id="artist-song-info-container">
-                            <ul id="musicList"></ul>
+                        <br>
+                        <div class="box">
+                            <div class="columns" id="middle-row">
+                                <div class="column">
+                                    <article class="message">
+                                        <div class="message-header">
+                                            <p class="subtitle has-text-white">Song Results!</p>
+                                        </div>
+                                        <div class="message-body" id="artist-song-info-container">
+                                            <ul id="musicList"></ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="columns" id="middle-row">
-                <div class="column">
-                    <article class="message">
-                        <div class="message-header">
-                            <p class="subtitle has-text-white">Song Lyrics!</p>
+                        <div class="box">
+                            <div class="columns" id="middle-row">
+                                <div class="column">
+                                    <article class="message">
+                                        <div class="message-header">
+                                            <p class="subtitle has-text-white">Song Lyrics!</p>
+                                        </div>
+                                        <div class="message-body" id="lyrics-container"></div>
+                                    </article>
+                                </div>
+                            </div>
                         </div>
-                    <div class="message-body" id="lyrics-container"></div>
-                    </article>
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer>
