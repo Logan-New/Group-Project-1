@@ -19,9 +19,12 @@
     <br>
     <main>
         <div class="box">
-            <div class="column is-half" id="search-form">
-                <h3 class="subtitle is-4 has-text-white">Search for a Song or Artist!</h3>
-                <div class="content is-medium">
+        
+            <div class="p-3 columns" id="search-form">
+                <div class="content  column">
+                    <!-- <h3 class="subtitle is-4 has-text-white">Search for a Song or Artist!</h3> -->
+                    <h3 class="subtitle is-4 ">Search for a Song or Artist!</h3>
+        
                     <button id="activate-modal-button" class="button is-success">Open Search</button>
                     <div id="search-modal" class="modal ">
                         <div class="modal-background"></div>
@@ -38,45 +41,47 @@
                             </div>
                         </div>
                     </div>
-                            <div id="top-row">
-
-                                <!-- Buttons for shuffle and repeat -->
-                                <div id="shuffleButton" class="active">
-                                    <button id="shuffleIcon"><i class="fas fa-random"></i></button>
-                                </div>
-                                <div id="repeatButton" class="active">
-                                    <button id="repeatIcon"><i class="fas fa-redo"></i></button>
-                                </div>
-                                <div id="spotifyPlayer"></div>
-                            </div>
+                </div>
+                <div id="top-row" class="column columns">
+        
+                    <!-- Buttons for shuffle and repeat -->
+        
+                    <div id="spotifyPlayer" class="column p-0"></div>
+                    <div id="shuffle-repeat-btns" class="column columns is-mobile">
+                        <div id="shuffleButton" class="active column">
+                            <button id="shuffleIcon"><i class="fas fa-random"></i></button>
                         </div>
-                        <br>
-                        <div class="box">
-                            <div class="columns" id="middle-row">
-                                <div class="column">
-                                    <article class="message">
-                                        <div class="message-header">
-                                            <p class="subtitle has-text-white">Song Results!</p>
-                                        </div>
-                                        <div class="message-body" id="artist-song-info-container">
-                                            <ul id="musicList"></ul>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
+                        <div id="repeatButton" class="active column">
+                            <button id="repeatIcon"><i class="fas fa-redo"></i></button>
                         </div>
-                        <div class="box">
-                            <div class="columns" id="middle-row">
-                                <div class="column">
-                                    <article class="message">
-                                        <div class="message-header">
-                                            <p class="subtitle has-text-white">Song Lyrics!</p>
-                                        </div>
-                                        <div class="message-body" id="lyrics-container"></div>
-                                    </article>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <div class="columns is-desktop" id="middle-row">
+                <div class="column ">
+                    <article class="message">
+                        <div class="message-header">
+                            <p class="subtitle has-text-white">Song Results!</p>
                         </div>
+                        <div class="message-body" id="artist-song-info-container">
+                            <ul id="musicList"></ul>
+                        </div>
+                    </article>
+                </div>
+                    <div class="column ">
+                        <article class="message">
+                            <div class="message-header">
+                                <p class="subtitle has-text-white">Song Lyrics!</p>
+                            </div>
+                            <div class="message-body" id="lyrics-container"></div>
+                        </article>
+                    </div>
+            </div>
+        </div>
     </main>
 
     <footer>

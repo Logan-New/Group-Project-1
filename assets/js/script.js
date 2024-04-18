@@ -105,12 +105,16 @@ function createSpotifyPlayer(trackUri, shuffle = false, repeat = false) {
 
     var iframe = document.createElement('iframe');
     iframe.setAttribute('src', iframeSrc);
-    iframe.setAttribute('width', '900');
-    iframe.setAttribute('height', '380');
+
+    // ---------------------------------------------
+    iframe.setAttribute('width', 'auto');
+    iframe.setAttribute('height', 'auto');
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allowtransparency', 'true');
     iframe.setAttribute('allow', 'encrypted-media');
+    // ---------------------------------------------
 
+    // ---------------------------------------------
     playerContainer.appendChild(iframe);
 
     // If shuffle is enabled, add event listener to reload iframe when ended
@@ -245,6 +249,7 @@ function searchSpotify(query) {
                 var playButton = document.createElement('button');
                 playButton.textContent = 'Play';
                 playButton.setAttribute('class', 'button');
+                playButton.setAttribute('style', 'margin: 0 5px; padding: 3px;')
 
                 playButton.addEventListener('click', function() {
                     createSpotifyPlayer(item.uri);
@@ -253,6 +258,7 @@ function searchSpotify(query) {
                 var lyricsButton = document.createElement('button');
                 lyricsButton.textContent = 'Lyrics';
                 lyricsButton.setAttribute('class', 'button');
+                lyricsButton.setAttribute('style', 'margin: 0 5px; padding: 3px;')
                 lyricsButton.addEventListener('click', function() {
                     getSongLyrics(item.artists[0].name, item.name);
                 });
