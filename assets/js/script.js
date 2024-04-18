@@ -189,6 +189,7 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
     if (event.key === 'Enter') {
         submitSearchInputVal();
     }
+    closeModal();
 });
 
 // Event listener for dropdown selection
