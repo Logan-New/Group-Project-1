@@ -242,6 +242,7 @@ function searchSpotify(query) {
 
                 var playButton = document.createElement('button');
                 playButton.textContent = 'Play';
+                playButton.setAttribute('class', 'button');
 
                 playButton.addEventListener('click', function() {
                     createSpotifyPlayer(item.uri);
@@ -249,6 +250,7 @@ function searchSpotify(query) {
 
                 var lyricsButton = document.createElement('button');
                 lyricsButton.textContent = 'Lyrics';
+                lyricsButton.setAttribute('class', 'button');
                 lyricsButton.addEventListener('click', function() {
                     getSongLyrics(item.artists[0].name, item.name);
                 });
