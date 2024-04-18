@@ -63,7 +63,8 @@ main {
     padding: 5px;
     border: var(--border);
     border-radius: var(--border-radius);
-    width: 50%;
+    /* width: 50%; */
+    width: 100%;
     min-height: 300px;
 }
 

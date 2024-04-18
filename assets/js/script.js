@@ -188,8 +188,9 @@ document.getElementById('searchButton').addEventListener('click', submitSearchIn
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         submitSearchInputVal();
+        closeModal();
     }
-    closeModal();
+    
 });
 
 // Event listener for dropdown selection
